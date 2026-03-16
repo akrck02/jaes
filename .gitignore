@@ -1,6 +1,6 @@
-node_modules
 sslDebug/cert.pem
 sslDebug/key.pem
 .env
 .idea
 .vscode
+.DS_Store

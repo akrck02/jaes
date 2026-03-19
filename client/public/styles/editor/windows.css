@@ -1,0 +1,448 @@
+.paintingBoardWindowed .window {
+  position: absolute;
+  background-color: white;
+  border-style: ridge;
+  max-height: 1000px;
+  cursor: default;
+}
+
+.paintingBoardWindowed .window .windowBar {
+  background-color: blue;
+  width: 100%;
+  display: inline-block;
+  color: white;
+}
+
+.paintingBoardWindowed .window#toolsWindow .windowContent,
+.paintingBoardWindowed .window#colorWindow .windowContent {
+  overflow: hidden !important;
+  resize: none !important;
+  height: auto !important;
+}
+
+.paintingBoardWindowed .window#layerWindow,
+.paintingBoardWindowed .window#colorWindow {
+  width: 225px;
+}
+
+.paintingBoardWindowed .window#toolsWindow label {
+  display: inline-block;
+  text-align: center;
+  width: 32px;
+  height: 32px;
+  margin: 2px;
+  cursor: pointer;
+  background-color: #ddddff;
+  border: dotted 1px black;
+  line-height: 32px;
+  font-size: 20px;
+}
+
+.paintingBoardWindowed .window#toolsWindow label:hover {
+  background-color: #aaaaff;
+}
+
+.paintingBoardWindowed .window#toolsWindow input[type="checkbox"] {
+  display: none;
+}
+
+.paintingBoardWindowed
+  .window#toolsWindow
+  #followGrid:checked
+  + label[for="followGrid"] {
+  color: red !important;
+}
+
+.paintingBoardWindowed
+  .window#toolsWindow
+  #followGrid:checked
+  ~ label[for="followGrid"]
+  ~ br
+  ~ span {
+  display: inline-block !important;
+}
+
+.paintingBoardWindowed
+  .window#toolsWindow
+  #followGrid
+  ~ label[for="followGrid"]
+  ~ br
+  ~ span {
+  display: none;
+}
+
+.paintingBoardWindowed .window#toolsWindow #toolList input:checked + label {
+  color: red !important;
+}
+
+.paintingBoardWindowed .window#toolsWindow #toolList input[type="radio"] {
+  display: none;
+}
+
+.paintingBoardWindowed .window #layerWindow_buttons {
+  margin: 5px 0 0 0;
+  padding: 0 5px 5px 5px;
+}
+
+.paintingBoardWindowed .window #layerWindow_buttons > input {
+  width: 100%;
+}
+
+.paintingBoardWindowed .window .windowContent {
+  resize: vertical;
+  overflow-y: scroll;
+  border-style: ridge;
+  display: block;
+  background-color: #cccccc;
+}
+
+.paintingBoardWindowed .window .windowContent input[type="number"] {
+  width: 50px;
+}
+
+.paintingBoardWindowed .window .windowContent input[type="text"] {
+  width: 100px;
+}
+
+.paintingBoardWindowed .window .windowContent .windowBar {
+  background-color: blue;
+  width: 100%;
+  display: inline-block;
+  color: white;
+}
+
+.paintingBoardWindowed .window .windowContent label[for="imageLoader"] {
+  cursor: pointer;
+}
+
+.paintingBoardWindowed .window .windowContent #imageLoader {
+  display: none;
+}
+
+.paintingBoardWindowed .window .windowContent #layersManager {
+  background-color: #fff;
+  border: solid 1px black;
+  margin: 5px;
+}
+
+.paintingBoardWindowed
+  .window
+  .windowContent
+  #layersManager
+  .layersManager_layer_title,
+.paintingBoardWindowed
+  .window
+  .windowContent
+  #layersManager
+  .layersManager_shapes_title {
+  cursor: grabbing;
+  line-height: 25px;
+}
+
+.paintingBoardWindowed
+  .window
+  .windowContent
+  #layersManager
+  > .layersManager_layer {
+  background-color: #fff;
+  /* All buttons */
+}
+
+.paintingBoardWindowed
+  .window
+  .windowContent
+  #layersManager
+  > .layersManager_layer[selected="true"]
+  > .layersManager_layer_head,
+.paintingBoardWindowed
+  .window
+  .windowContent
+  #layersManager
+  > .layersManager_layer[selected="true"]
+  > .layersManager_layer_head
+  > .layersManager_layer_tools {
+  background-color: #8888ff;
+}
+
+.paintingBoardWindowed
+  .window
+  .windowContent
+  #layersManager
+  > .layersManager_layer
+  > .layersManager_layer_head {
+  display: flow-root;
+  padding: 5px;
+  border-bottom: solid 1px black;
+  border-top: solid 1px black;
+}
+
+.paintingBoardWindowed
+  .window
+  .windowContent
+  #layersManager
+  > .layersManager_layer
+  > .layersManager_layer_shapes {
+  min-height: 30px;
+  transition: all 0.3s ease;
+}
+
+.paintingBoardWindowed
+  .window
+  .windowContent
+  #layersManager
+  > .layersManager_layer
+  > .layersManager_layer_shapes.hidden {
+  display: none;
+}
+
+.paintingBoardWindowed
+  .window
+  .windowContent
+  #layersManager
+  > .layersManager_layer
+  > .layersManager_layer_shapes
+  > .layersManager_shapes_head {
+  padding: 5px 5px 5px 20px;
+  display: flow-root;
+}
+
+.paintingBoardWindowed
+  .window
+  .windowContent
+  #layersManager
+  > .layersManager_layer
+  .layersManager_layer_tools,
+.paintingBoardWindowed
+  .window
+  .windowContent
+  #layersManager
+  > .layersManager_layer
+  .layersManager_shape_tools {
+  float: right;
+}
+
+.paintingBoardWindowed
+  .window
+  .windowContent
+  #layersManager
+  > .layersManager_layer
+  .layersManager_layer_tools
+  > button,
+.paintingBoardWindowed
+  .window
+  .windowContent
+  #layersManager
+  > .layersManager_layer
+  .layersManager_shape_tools
+  > button {
+  width: 25px;
+  height: 25px;
+  gap: 5px;
+  background-color: rgba(255, 255, 255, 0);
+  border-style: none;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 13px;
+}
+
+.paintingBoardWindowed
+  .window
+  .windowContent
+  #layersManager
+  > .layersManager_layer
+  .layersManager_layer_tools
+  > button:hover,
+.paintingBoardWindowed
+  .window
+  .windowContent
+  #layersManager
+  > .layersManager_layer
+  .layersManager_shape_tools
+  > button:hover {
+  background-color: rgba(0, 0, 0, 0.333333);
+}
+
+.paintingBoardWindowed
+  .window
+  .windowContent
+  #layersManager
+  > .layersManager_layer
+  .layersManager_layer_tools
+  > button.btnShowShapes:before,
+.paintingBoardWindowed
+  .window
+  .windowContent
+  #layersManager
+  > .layersManager_layer
+  .layersManager_shape_tools
+  > button.btnShowShapes:before {
+  content: "-";
+}
+
+.paintingBoardWindowed
+  .window
+  .windowContent
+  #layersManager
+  > .layersManager_layer
+  .layersManager_layer_tools
+  > button.btnShowShapes.closed:before,
+.paintingBoardWindowed
+  .window
+  .windowContent
+  #layersManager
+  > .layersManager_layer
+  .layersManager_shape_tools
+  > button.btnShowShapes.closed:before {
+  content: "+" !important;
+}
+
+.paintingBoardWindowed
+  .window
+  .windowContent
+  #layersManager
+  > .layersManager_layer
+  .layersManager_layer_tools
+  > button.btnLayerHide[hide="true"],
+.paintingBoardWindowed
+  .window
+  .windowContent
+  #layersManager
+  > .layersManager_layer
+  .layersManager_shape_tools
+  > button.btnLayerHide[hide="true"] {
+  color: #888;
+}
+
+.paintingBoardWindowed .window#shapeEditor,
+.paintingBoardWindowed .window#projectShapeWindow {
+  width: 500px;
+  z-index: 999999;
+}
+
+.paintingBoardWindowed .window#shapeEditor.hidden,
+.paintingBoardWindowed .window#projectShapeWindow.hidden {
+  display: none;
+}
+
+.paintingBoardWindowed .window#shapeEditor .closeButton,
+.paintingBoardWindowed .window#projectShapeWindow .closeButton {
+  float: right;
+}
+
+.paintingBoardWindowed .window#shapeEditor .windowContent,
+.paintingBoardWindowed .window#projectShapeWindow .windowContent {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.paintingBoardWindowed .window#shapeEditor .windowContent .propertyRow,
+.paintingBoardWindowed .window#projectShapeWindow .windowContent .propertyRow {
+  display: flex;
+  padding: 5px 10px;
+  background-color: #fff !important;
+  border: solid 1px #000000;
+}
+
+.paintingBoardWindowed .window#shapeEditor .windowContent .propertyRow.hidden,
+.paintingBoardWindowed
+  .window#projectShapeWindow
+  .windowContent
+  .propertyRow.hidden {
+  display: none;
+}
+
+.paintingBoardWindowed .window#shapeEditor .windowContent .propertyRow .col-50,
+.paintingBoardWindowed
+  .window#projectShapeWindow
+  .windowContent
+  .propertyRow
+  .col-50 {
+  width: 50%;
+  box-sizing: border-box;
+  padding: 0 5px;
+}
+
+.paintingBoardWindowed
+  .window#shapeEditor
+  .windowContent
+  .propertyRow
+  .col-50
+  label,
+.paintingBoardWindowed
+  .window#projectShapeWindow
+  .windowContent
+  .propertyRow
+  .col-50
+  label {
+  white-space: nowrap;
+}
+
+.paintingBoardWindowed
+  .window#shapeEditor
+  .windowContent
+  .propertyRow
+  .col-50
+  input,
+.paintingBoardWindowed
+  .window#shapeEditor
+  .windowContent
+  .propertyRow
+  .col-50
+  select,
+.paintingBoardWindowed
+  .window#projectShapeWindow
+  .windowContent
+  .propertyRow
+  .col-50
+  input,
+.paintingBoardWindowed
+  .window#projectShapeWindow
+  .windowContent
+  .propertyRow
+  .col-50
+  select {
+  width: 100%;
+  box-sizing: border-box;
+  border-style: none;
+  outline: none;
+}
+
+.paintingBoardWindowed
+  .window#shapeEditor
+  .windowContent
+  .propertyRow
+  .col-50:first-child,
+.paintingBoardWindowed
+  .window#projectShapeWindow
+  .windowContent
+  .propertyRow
+  .col-50:first-child {
+  border-right: solid 1px #000000;
+}
+
+.layersManager_layer {
+  background-color: #fff;
+}
+
+.layersManager_layer.moving {
+  width: 200px;
+  z-index: 9999999;
+  position: absolute;
+}
+
+.layersManager_layer.moving .layersManager_layer_tools,
+.layersManager_layer.moving .layersManager_layer_shapes {
+  display: none;
+}
+
+.layersManager_shapes_head {
+  background-color: #fff;
+}
+
+.layersManager_shapes_head.moving {
+  width: 200px;
+  z-index: 9999999;
+  position: absolute;
+}

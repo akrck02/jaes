@@ -4,3 +4,5 @@ sslDebug/key.pem
 .idea
 .vscode
 .DS_Store
+
+client/public/js

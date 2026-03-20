@@ -1,8 +1,8 @@
 export default class ShipsManager {
-  ships: Ship[];
-  shipsById: { [id: number]: Ship };
+  ships: any[];
+  shipsById: { [key: string]: any };
 
-  constructor(ships: Ship[]) {
+  constructor(ships: any) {
     this.ships = ships;
     this.shipsById = {};
     ships.forEach((ship) => {
@@ -14,15 +14,12 @@ export default class ShipsManager {
       }
     });
   }
-
   getShips() {
     return this.ships;
   }
-
-  getShipById(shipId: number) {
+  getShipById(shipId: string) {
     return this.shipsById[shipId];
   }
-
   getGenericShips() {
     return this.ships.filter((s) => !s.userId);
   }

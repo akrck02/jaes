@@ -4,7 +4,10 @@ import (
 	"net/http"
 
 	"github.com/gorilla/websocket"
+
+	"github.com/jonbul/jaes/api"
 	"github.com/jonbul/jaes/logger"
+	"github.com/jonbul/jaes/models"
 )
 
 /*
@@ -51,4 +54,27 @@ func OpenGameSocket(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 	}()
+}
+
+func GetGameData(w http.ResponseWriter, r *http.Request) {
+	api.SendJson(w, models.GameData{
+		Title:         "Game",
+		Username:      "",
+		Credits:       0,
+		CanvasWidth:   3840,
+		CanvasHeight:  2160,
+		GuestsAllowed: true,
+	})
+}
+
+func GetShips(w http.ResponseWriter, r *http.Request) {
+	list := make([]models.Ship, 0)
+	api.SendJson(w, list)
+}
+
+func GetUserShips(w http.ResponseWriter, r *http.Request) {
+
+	api.SendJson(w, models.UserShipsData{
+		UserShips: make([]models.Ship, 0),
+	})
 }

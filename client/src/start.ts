@@ -34,8 +34,7 @@ window.onload = async function () {
  * @returns a function to load the static template
  */
 function template(url: string): RouteLoader {
-  return async (_: string[], wrapper: HTMLElement) =>
-    Templates.load(url, wrapper);
+  return async (_: string[], wrapper: HTMLElement) => Templates.load(url, wrapper);
 }
 
 /** Start the web app     */

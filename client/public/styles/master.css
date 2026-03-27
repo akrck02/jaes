@@ -1,0 +1,62 @@
+@import url("./home.css");
+@import url("./layout/layout.css");
+@import url("./game/game.css");
+@import url("./editor/editor.css");
+
+/* JUST FOR MAC DEBUG */
+:root * {
+  font-family: system-ui;
+}
+
+:root {
+  /* --accent-color: #4a5497; */
+  --accent-color: #86b2ba;
+}
+
+.fullscreen {
+  width: 100vw;
+  height: 100vh;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+a.button-link {
+  padding: 1rem 1.3rem;
+  border-radius: 1rem;
+  border: none;
+  font-size: 1.15rem;
+  cursor: pointer;
+  background: var(--accent-color);
+  color: #ffffff;
+  text-decoration: unset;
+  margin: 0rem 0.2rem;
+  transition: filter 0.15s;
+}
+
+a.button-link:hover {
+  filter: brightness(0.95);
+}
+
+a.button-link.outline {
+  background: transparent;
+  border: solid 0.1rem var(--accent-color);
+  color: var(--accent-color);
+}
+
+a.button-link.outline:hover {
+  filter: brightness(0.85);
+}

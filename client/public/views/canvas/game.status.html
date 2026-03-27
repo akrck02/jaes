@@ -1,0 +1,26 @@
+<span id="alerts"></span>
+<div class="container">
+  <canvas
+    class="mt-2"
+    id="canvas"
+    width="<%= canvasWidth %>"
+    height="<%= canvasHeight %>"
+  ></canvas>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 25%">Name</th>
+        <th style="width: 25%">Deaths</th>
+        <th style="width: 25%">Kills</th>
+        <th style="width: 25%">socketId</th>
+      </tr>
+    </thead>
+    <tbody id="playersDetails"></tbody>
+  </table>
+</div>
+
+<link rel="stylesheet" href="/css/game.css" type="text/css" />
+<script type="module">
+  import GameStatus from '/js/canvas/gameStatus.js';
+  new GameStatus(<%= canvasWidth %>, <%= canvasHeight %>);
+</script>

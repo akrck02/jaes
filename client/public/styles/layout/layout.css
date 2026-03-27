@@ -1,0 +1,393 @@
+#alerts {
+  left: 0;
+  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
+  position: absolute;
+  right: 0;
+  width: fit-content;
+  z-index: 999;
+}
+
+.customAlert.show {
+  opacity: 0.9;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f8f9fa;
+}
+body .container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+body .container #form-register,
+body .container #form-login {
+  font-weight: 100;
+  margin: 0 auto;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+body .container #form-register h1,
+body .container #form-login h1 {
+  font-weight: 100;
+}
+body .container #form-register button,
+body .container #form-login button {
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: var(--accent-color);
+  color: white;
+}
+body .container #form-register input,
+body .container #form-register select,
+body .container #form-login input,
+body .container #form-login select {
+  color: #495057;
+  background-color: #fff;
+}
+body .container #form-register input,
+body .container #form-register select,
+body .container #form-register button,
+body .container #form-login input,
+body .container #form-login select,
+body .container #form-login button {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition:
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+body .container #form-register input:focus,
+body .container #form-register select:focus,
+body .container #form-register button:focus,
+body .container #form-login input:focus,
+body .container #form-login select:focus,
+body .container #form-login button:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+body .container #form-register input,
+body .container #form-register input label,
+body .container #form-register select,
+body .container #form-register select label,
+body .container #form-register button,
+body .container #form-register button label,
+body .container #form-login input,
+body .container #form-login input label,
+body .container #form-login select,
+body .container #form-login select label,
+body .container #form-login button,
+body .container #form-login button label {
+  margin-bottom: 10px;
+}
+body .container #shipSelectorControl {
+  text-align: center;
+  margin-bottom: 10px;
+}
+body .container #shipSelectorControl button {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+body .container #shipSelectorControl #startBtn {
+  font-size: 18px;
+  padding: 8px 16px;
+  /* border: 2px solid #a04c3c; */
+  border-radius: 4px;
+  background-color: var(--accent-color);
+  color: white;
+  margin: 0 10px;
+  border-radius: 20px;
+}
+body .container #shipSelectorControl #startBtn:hover {
+  background-color: rgba(18, 54, 88, 0.4980392157);
+}
+body .container #shipSelectorControl #nextShip,
+body .container #shipSelectorControl #previousShip {
+  font-size: 35px;
+  vertical-align: middle;
+}
+body .container #shipSelectorControl #nextShip:hover,
+body .container #shipSelectorControl #previousShip:hover {
+  color: #123658;
+}
+body .container #newProjectBtn {
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  height: 32px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition:
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  padding: 0;
+  padding-top: 6px;
+  background-color: #eee;
+}
+body .container #newProjectBtn:hover {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+body .container #projectBoard {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+body .container #projectBoard .projectCard {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+body .container #projectBoard .projectCard .deleteButton {
+  float: right;
+  position: relative;
+  top: 5px;
+  right: 5px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 2px 5px;
+  cursor: pointer;
+}
+body .container #projectBoard .projectCard h5 {
+  margin-bottom: 10px;
+}
+body .container #projectBoard .projectCard a {
+  text-decoration: none;
+  color: #007bff;
+}
+body .container #projectBoard .projectCard a:hover {
+  text-decoration: underline;
+}
+body .container #projectBoard .projectCard label {
+  display: block;
+  font-size: 12px;
+  color: #6c757d;
+}
+@media (min-width: 576px) {
+  body .container,
+  body .container-sm {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  body .container,
+  body .container-sm,
+  body .container-md {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  body .container,
+  body .container-sm,
+  body .container-md,
+  body .container-lg {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  body .container,
+  body .container-sm,
+  body .container-md,
+  body .container-lg,
+  body .container-xl {
+    max-width: 1140px;
+  }
+}
+body #mainNavbar {
+  background-color: #343a40;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+body #mainNavbar .mainNavbar-brand {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+body #mainNavbar .navbar-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  /* Hidden by default, shown on small screens */
+}
+@media (max-width: 992px) {
+  body #mainNavbar .navbar-button {
+    display: inline-block;
+  }
+  body #mainNavbar .navbarMenu.collapsable[collapsed-expanded] {
+    display: block !important;
+    position: absolute;
+    background-color: #343a40;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    margin: 0 !important;
+  }
+  body #mainNavbar .navbarMenu.collapsable[collapsed-expanded] li {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0;
+    padding: 10px 0;
+    display: block;
+  }
+  body #mainNavbar .navbarMenu.collapsable[collapsed-expanded] li:hover {
+    background-color: #495057;
+  }
+  body #mainNavbar .navbarMenu.collapsable[collapsed-expanded] li > a {
+    width: 100% !important;
+    display: block;
+  }
+}
+body #mainNavbar #navbarMenuRight {
+  margin-left: auto;
+}
+@media (max-width: 992px) {
+  body #mainNavbar .navbarMenu.collapsable {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+  body #mainNavbar .navbarMenu.collapsable.show {
+    display: flex;
+  }
+}
+body #mainNavbar .navbarMenu {
+  display: flex;
+  margin: 12px;
+  padding: 0;
+  /* Big screen */
+}
+body #mainNavbar .navbarMenu > li {
+  list-style: none;
+  display: inline-block;
+}
+body #mainNavbar .navbarMenu > li > a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 4px;
+}
+body #mainNavbar .navbarMenu > li > a:hover {
+  color: rgb(255, 255, 255);
+}
+@media (min-width: 992px) {
+  body #mainNavbar .navbarMenu * {
+    color: red;
+  }
+}
+body .alert {
+  padding: 20px;
+  background-color: #f44336;
+  /* Red */
+  color: white;
+  margin-bottom: 15px;
+  opacity: 0;
+  transition: opacity 0.6s;
+  /* 600ms to fade out */
+  border-radius: 10px;
+  position: fixed;
+  max-width: 500px;
+  width: fit-content;
+  left: calc(50% - 250px);
+  top: 20px;
+}
+body .alert #alertMessage {
+  display: block;
+  margin-top: 5px;
+  font-weight: normal;
+  font-size: 14px;
+  margin-right: 25px;
+}
+body .alert.show {
+  opacity: 0.9;
+}
+body .alert.primary {
+  background-color: #007bff;
+}
+body .alert.secondary {
+  background-color: #6c757d;
+}
+body .alert.success {
+  background-color: #28a745;
+}
+body .alert.danger {
+  background-color: #dc3545;
+}
+body .alert.warning {
+  background-color: #ffc107;
+  color: black;
+}
+body .alert.info {
+  background-color: #17a2b8;
+  color: white;
+}
+body .alert.light {
+  background-color: #f8f9fa;
+  color: black;
+}
+body .alert.dark {
+  background-color: #343a40;
+  color: white;
+}
+body .alert .close {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+  top: -15px;
+  right: -16px;
+  background-color: rgba(0, 0, 0, 0);
+  border-style: none;
+}
+body .alert .close:hover {
+  color: black;
+}
